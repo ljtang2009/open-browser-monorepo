@@ -1,0 +1,5 @@
+# npx lint-staged --allow-empty
+# TODO optimize lint-staged config
+# lint-staged has a bug:
+# commit a file which is ignored by sublint, lint-stage shows a file committed but exit by error.
+pnpm lint

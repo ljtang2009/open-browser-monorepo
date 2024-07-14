@@ -1,0 +1,31 @@
+name: 📢 Publish to GitHub
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup pnpm environment
+        uses: ./.github/actions/setup-pnpm
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          # @see https://typicode.github.io/husky/how-to.html#ci-server-and-docker
+          HUSKY: 0
+        run: |
+          pnpm run release
