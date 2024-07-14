@@ -7,6 +7,7 @@
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
     "cm": "git-cz",
+    "release": "semantic-release",
     "lint": "pnpm lint:eslint && pnpm lint:markdown && pnpm lint:cspell",
     "lint:eslint": "eslint .",
     "lint:eslint:view": "pnpx @eslint/config-inspector",
@@ -22,6 +23,8 @@
     "@commitlint/config-conventional": "^19.2.2",
     "@eslint/config-inspector": "^0.5.1",
     "@ljtang2009/lint-configuration": "^0.2.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "commitizen": "^4.3.0",
     "cspell": "^8.10.4",
     "cz-git": "^1.9.3",
@@ -32,6 +35,7 @@
     "lodash": "^4.17.21",
     "markdownlint-cli2": "^0.13.0",
     "only-allow": "^1.2.1",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "semantic-release": "^24.0.0"
   }
 }
