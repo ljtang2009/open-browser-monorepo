@@ -6,7 +6,13 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
-    "cm": "git-cz"
+    "cm": "git-cz",
+    "lint": "pnpm lint:eslint && pnpm lint:markdown && pnpm lint:cspell",
+    "lint:eslint": "eslint .",
+    "lint:eslint:view": "pnpx @eslint/config-inspector",
+    "lint:eslint:fix": "time eslint --fix .",
+    "lint:markdown": "markdownlint-cli2",
+    "lint:cspell": "cspell lint --show-context  --show-suggestions ."
   },
   "keywords": [],
   "author": "Logan Tang <ho_ho_gl@hotmail.com>",
@@ -14,10 +20,17 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/config-inspector": "^0.5.1",
+    "@ljtang2009/lint-configuration": "^0.2.2",
     "commitizen": "^4.3.0",
+    "cspell": "^8.10.4",
     "cz-git": "^1.9.3",
+    "eslint": "^9.7.0",
+    "globals": "^15.8.0",
     "husky": "^9.0.11",
     "jsonc-parser": "^3.3.1",
+    "lodash": "^4.17.21",
+    "markdownlint-cli2": "^0.13.0",
     "only-allow": "^1.2.1"
   }
 }
