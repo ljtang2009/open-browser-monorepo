@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   Sync:
-    if: github.repository == 'ljtang2009/lint-configuration-monorepo'
+    if: github.repository == 'ljtang2009/open-browser-monorepo'
     runs-on: ubuntu-latest
     steps:
       - name: Sync
